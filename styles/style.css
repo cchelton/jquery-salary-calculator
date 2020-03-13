@@ -4,7 +4,7 @@ body {
 }
 
 header {
-  margin: -15px;
+  margin: 0px -15px;
   text-align: center;
   padding: 15px 0;
   background: rgb(126, 126, 126);
@@ -15,11 +15,40 @@ header {
   margin-bottom: 10px;
 }
 
-.employeeAdd button {
-  float: right;
+.vr_children > * {
+  margin-bottom: 10px;
 }
 
 .employeeDetailsForm {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.employeeDetailsForm input {
+  padding-left: 5px;
+}
+
+.theTable {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+}
+
+.theTable th,
+td {
+  border: black solid 2px;
+  padding: 5px;
+}
+
+.theTable th {
+  background: rgb(179, 179, 179);
+}
+
+.theTable tfoot td {
+  background: rgb(211, 211, 211);
+}
+
+.text_align_right {
+  text-align: right;
 }

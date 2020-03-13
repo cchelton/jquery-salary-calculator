@@ -16,16 +16,47 @@
       <h1>Salary Calculator</h1>
     </header>
     <div class="container">
-      <div class="employeeAdd">
+      <div class="employeeAdd vr">
         <h2>Add Employee</h2>
-        <form class="employeeDetailsForm vr">
+        <form class="employeeDetailsForm vr_children">
           <input type="text" placeholder="First Name" />
           <input type="text" placeholder="Last Name" />
           <input type="text" placeholder="ID" />
           <input type="text" placeholder="Title" />
           <input type="text" placeholder="Annual Salary" />
         </form>
-        <button class="submitButton">Submit</button>
+        <div class="text_align_right">
+          <button class="submitButton">Submit</button>
+        </div>
+      </div>
+      <div class="employeesTable">
+        <h2>Employees</h2>
+        <table class="theTable">
+          <thead>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Annual Salary</th>
+            <th></th>
+          </thead>
+          <tr>
+            <td>Cole</td>
+            <td>Chelton</td>
+            <td>1692865</td>
+            <td>Hospitality</td>
+            <td>$20,000</td>
+            <td><button>Delete</button></td>
+          </tr>
+          <tfoot>
+            <tr>
+              <td colspan="6">&nbsp;</td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <div class="text_align_right">
+        <h3>Total Monthly: $<span class="monthlyPaidOut">0</span></h3>
       </div>
     </div>
   </body>
