@@ -29,11 +29,18 @@ function delEmployee() {
 function render() {
   $(".js-tableEmployeeSection").empty();
   let monthlyTotal = 0;
+  let whiteGrey = true;
   for (let i = 0; i < employees.length; i++) {
     const employee = employees[i];
     monthlyTotal += employee.salary;
+    if (whiteGrey) {
+      wgClass = "white";
+    } else {
+      wgClass = "grey";
+    }
+    whiteGrey = !whiteGrey;
     $(".js-tableEmployeeSection").append(`
-    <tr>
+    <tr class="${wgClass}">
       <td>${employee.firstName}</td>
       <td>${employee.lastName}</td>
       <td>${employee.ID}</td>

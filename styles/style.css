@@ -64,3 +64,11 @@ td {
 .float_right {
   float: right;
 }
+
+.white > * {
+  background: white;
+}
+
+.grey > * {
+  background: rgb(231, 231, 231);
+}
