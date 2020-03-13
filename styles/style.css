@@ -10,3 +10,16 @@ header {
   background: rgb(126, 126, 126);
   box-shadow: 0 5px 5px silver;
 }
+
+.vr {
+  margin-bottom: 10px;
+}
+
+.employeeAdd button {
+  float: right;
+}
+
+.employeeDetailsForm {
+  display: flex;
+  justify-content: space-between;
+}
