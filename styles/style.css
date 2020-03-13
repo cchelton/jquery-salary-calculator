@@ -1,0 +1,12 @@
+body {
+  margin: 0 15px;
+  font-size: 1.5em;
+}
+
+header {
+  margin: -15px;
+  text-align: center;
+  padding: 15px 0;
+  background: rgb(126, 126, 126);
+  box-shadow: 0 5px 5px silver;
+}
