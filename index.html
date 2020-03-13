@@ -18,15 +18,34 @@
     <div class="container">
       <div class="employeeAdd vr">
         <h2>Add Employee</h2>
-        <form class="employeeDetailsForm vr_children">
-          <input type="text" placeholder="First Name" />
-          <input type="text" placeholder="Last Name" />
-          <input type="text" placeholder="ID" />
-          <input type="text" placeholder="Title" />
-          <input type="text" placeholder="Annual Salary" />
+        <form id="form1" class="employeeDetailsForm vr_children">
+          <input
+            required
+            type="text"
+            placeholder="First Name"
+            class="js-input-fName"
+          />
+          <input
+            required
+            type="text"
+            placeholder="Last Name"
+            class="js-input-lName"
+          />
+          <input required type="number" placeholder="ID" class="js-input-ID" />
+          <input
+            required
+            type="text"
+            placeholder="Title"
+            class="js-input-title"
+          />
+          <input
+            type="number"
+            placeholder="Annual Salary"
+            class="js-input-salary"
+          />
         </form>
         <div class="text_align_right">
-          <button class="submitButton btn">Submit</button>
+          <button form="form1" class="submitButton btn">Submit</button>
         </div>
       </div>
       <div class="employeesTable">
@@ -40,18 +59,20 @@
             <th>Annual Salary</th>
             <th></th>
           </thead>
-          <tr>
-            <td>Cole</td>
-            <td>Chelton</td>
-            <td>1692865</td>
-            <td>Hospitality</td>
-            <td>$20000</td>
-            <td>
-              <div class="text_align_center">
-                <button class="btn">Delete</button>
-              </div>
-            </td>
-          </tr>
+          <tbody class="js-emptyThese">
+            <tr>
+              <td>Cole</td>
+              <td>Chelton</td>
+              <td>1692865</td>
+              <td>Hospitality</td>
+              <td>$20000</td>
+              <td>
+                <div class="text_align_center">
+                  <button class="btn js-delBtn">Delete</button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
           <tfoot>
             <tr>
               <td colspan="6">&nbsp;</td>
