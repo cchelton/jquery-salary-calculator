@@ -19,6 +19,18 @@ header {
   margin-bottom: 10px;
 }
 
+.btn {
+  border-radius: 4px;
+}
+
+.text_align_right {
+  text-align: right;
+}
+
+.text_align_center {
+  text-align: center;
+}
+
 .employeeDetailsForm {
   display: flex;
   justify-content: space-between;
@@ -49,6 +61,6 @@ td {
   background: rgb(211, 211, 211);
 }
 
-.text_align_right {
-  text-align: right;
+.float_right {
+  float: right;
 }
