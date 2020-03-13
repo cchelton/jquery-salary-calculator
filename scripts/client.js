@@ -21,7 +21,9 @@ function addEmployee(event) {
 }
 
 function delEmployee() {
-  // TODO: delete employee
+  const i = $(this).data("i");
+  employees.splice(i, 1);
+  render();
 }
 
 function render() {
@@ -39,7 +41,7 @@ function render() {
       <td>$${employee.salary}</td>
       <td>
         <div class="text_align_center">
-          <button class="btn js-delBtn">Delete</button>
+          <button class="btn js-delBtn" data-i=${i}>Delete</button>
         </div>
       </td>
     </tr>
