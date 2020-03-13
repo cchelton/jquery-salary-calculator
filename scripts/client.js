@@ -14,7 +14,7 @@ function addEmployee(event) {
     lastName: $(".js-input-lName").val(),
     ID: $(".js-input-ID").val(),
     title: $(".js-input-title").val(),
-    salary: $(".js-input-salary").val()
+    salary: parseInt($(".js-input-salary").val())
   };
   employees.push(newEmployee);
   render();
@@ -25,8 +25,25 @@ function delEmployee() {
 }
 
 function render() {
-  $(".js-emptyThese").empty();
-  for (let i; i < employees.length; i++) {
-    //
+  $(".js-tableEmployeeSection").empty();
+  let monthlyTotal = 0;
+  for (let i = 0; i < employees.length; i++) {
+    const employee = employees[i];
+    monthlyTotal += employee.salary;
+    $(".js-tableEmployeeSection").append(`
+    <tr>
+      <td>${employee.firstName}</td>
+      <td>${employee.lastName}</td>
+      <td>${employee.ID}</td>
+      <td>${employee.title}</td>
+      <td>$${employee.salary}</td>
+      <td>
+        <div class="text_align_center">
+          <button class="btn js-delBtn">Delete</button>
+        </div>
+      </td>
+    </tr>
+    `);
   }
+  $(".monthlyPaidOut").text(monthlyTotal);
 }
