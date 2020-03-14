@@ -16,6 +16,11 @@ function addEmployee(event) {
     title: $(".js-input-title").val(),
     salary: parseInt($(".js-input-salary").val())
   };
+  $(".js-input-fName").val("");
+  $(".js-input-lName").val("");
+  $(".js-input-ID").val("");
+  $(".js-input-title").val("");
+  $(".js-input-salary").val("");
   employees.push(newEmployee);
   render();
 }
