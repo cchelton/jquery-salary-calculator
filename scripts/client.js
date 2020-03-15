@@ -1,4 +1,4 @@
-const employees = [];
+let employees = [];
 
 $(document).ready(init);
 
@@ -9,10 +9,14 @@ function init() {
 
 function addEmployee(event) {
   event.preventDefault();
+  if (checkIDMatch()) {
+    alert("ID matches existing employee");
+    return;
+  }
   const newEmployee = {
     firstName: $(".js-input-fName").val(),
     lastName: $(".js-input-lName").val(),
-    ID: $(".js-input-ID").val(),
+    ID: parseInt($(".js-input-ID").val()),
     title: $(".js-input-title").val(),
     salary: parseInt($(".js-input-salary").val())
   };
@@ -35,6 +39,8 @@ function render() {
   $(".js-tableEmployeeSection").empty();
   let monthlyTotal = 0;
   let whiteGrey = true;
+  sortByID();
+
   for (let i = 0; i < employees.length; i++) {
     const employee = employees[i];
     monthlyTotal += employee.salary;
@@ -60,4 +66,28 @@ function render() {
     `);
   }
   $(".monthlyPaidOut").text(monthlyTotal);
+}
+
+function sortByID() {
+  const sortedEmployees = JSON.parse(JSON.stringify(employees)); // need copy, not reference
+  let hold = 0;
+  for (let i = 0; i < sortedEmployees.length - 1; i++) {
+    if (sortedEmployees[i].ID > sortedEmployees[i + 1].ID) {
+      hold = sortedEmployees[i];
+      sortedEmployees[i] = sortedEmployees[i + 1];
+      sortedEmployees[i + 1] = hold;
+      i -= 2;
+    }
+  }
+  employees = JSON.parse(JSON.stringify(sortedEmployees));
+}
+
+function checkIDMatch() {
+  const ID = parseInt($(".js-input-ID").val());
+  for (let employee of employees) {
+    if (ID === employee.ID) {
+      return true;
+    }
+  }
+  return false;
 }
