@@ -25,7 +25,7 @@ function addEmployee(event) {
   $(".js-input-ID").val("");
   $(".js-input-title").val("");
   $(".js-input-salary").val("");
-  employees.push(newEmployee);
+  employees.unshift(newEmployee);
   render();
 }
 
@@ -77,7 +77,6 @@ function sortByID() {
       sortedEmployees[i] = sortedEmployees[i + 1];
       sortedEmployees[i + 1] = hold;
     }
-    i -= 2;
   }
   employees = JSON.parse(JSON.stringify(sortedEmployees));
 }
