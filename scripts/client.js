@@ -76,7 +76,6 @@ function sortByID() {
       hold = sortedEmployees[i];
       sortedEmployees[i] = sortedEmployees[i + 1];
       sortedEmployees[i + 1] = hold;
-      i -= 2;
     }
   }
   employees = JSON.parse(JSON.stringify(sortedEmployees));
